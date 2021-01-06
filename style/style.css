@@ -1,0 +1,112 @@
+@import 'fonts.css';
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel_pages {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel_page {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: green;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 100%;
+    perspective: 300px;
+    /* animation-name: move;
+    animation-duration: 2s; */
+    transition: 1s;
+}
+
+.carousel_page.active {
+    top: 0;
+    transition: 1s;
+}
+
+.carousel_indicators {
+    position: fixed;
+    right: 1%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: grey;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    transition: 1s;
+}
+
+.indicator:hover {
+    cursor: pointer;
+    background: rgb(70, 68, 68);
+}
+
+.indicator.active {
+    background: black;
+}
+
+.prev_btn {
+    margin-bottom: 5px;
+}
+
+.prev_btn::before {
+    content: "\f106";
+    color: black;
+    font-size: 20px;
+}
+
+.next_btn::before {
+    content: "\f107";
+    color: black;
+    font-size: 20px;
+}
+
+@keyframes move {
+    0% {
+        transform: rotateX(90deg) rotateX(90deg);
+
+    }
+
+    100% {
+        transform: rotateX(45deg) rotateY(-45deg);
+        top: 0;
+    }
+}
+
+@keyframes ani {
+    to {
+        transform: rotate3d(5, 12, 13, 360deg);
+    }
+}
